@@ -1,6 +1,7 @@
-#!/bin/bash
+# update
+sudo apt-get update
 
-# install basics
+# install some basics
 sudo apt-get install -y build-essential git python-pip libfreetype6-dev
  libxft-dev libncurses-dev libopenblas-dev gfortran python-matplotlib
  libblas-dev liblapack-dev libatlas-base-dev python-dev python-pydot
@@ -24,17 +25,3 @@ sudo apt-get update
 sudo apt-get install cuda
 export PATH=$PATH:/usr/local/cuda-8.0/bin
 export LD_LIBRARY_PATH=:/usr/local/cuda-8.0/lib64
-
-
-
-
-
-
-
-
-
-
-
-
-
-
