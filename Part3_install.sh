@@ -20,6 +20,9 @@ mkdir data
 # launch tensorflow-gpu docker
 sudo nvidia-docker run -it -v ~/:/host tensorflow/tensorflow:nightly-devel-gpu-py3 bash
 
+# install missing module in docker
+pip install requests
+
 
 
 
