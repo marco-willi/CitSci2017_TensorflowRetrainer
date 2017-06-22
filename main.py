@@ -13,7 +13,7 @@ def get_url(url, fname):
     return path_to_file
 
 # extract zip-file url with data
-def get_zip_url(url='https://tensorflow.wq.io/sources.json', dataset_id=2):
+def get_zip_url(url='https://tensorflow.wq.io/sources.json', dataset_id=-1):
     # open json file
     j_file = urllib.request.urlopen(url)
     # extract json content
@@ -21,7 +21,7 @@ def get_zip_url(url='https://tensorflow.wq.io/sources.json', dataset_id=2):
     # get id list
     id_list = [x['id'] for x in j_load['list']]
     # get url for zip file
-    if (dataset_id < 0):
+    if (str(dataset_id) == str(-1)):
         # most recent data set
         list_id = id_list.index(id_list[-1])
         zip_url = j_load['list'][list_id]['file']
@@ -55,7 +55,7 @@ if __name__ == "__main__":
     path_to_tf = '/tensorflow/'
 
     # url for images (input/output)
-    ds_id = int(sys.argv[1])
+    ds_id = str(sys.argv[1])
     desc = str(sys.argv[2])
     url_images, dataset_id = get_zip_url(dataset_id=ds_id)
     images_name = url_images.split("/")[-1].strip(".zip")
